@@ -15,7 +15,7 @@
     @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false, window.pageYOffset > 200 ? scrollBtn = true : scrollBtn = false">
     <!-- button -->
     <button
-      class="fixed bg-white/70 flex items-center justify-center w-12 h-12 rounded-full z-50 shadow-xl"
+      class="fixed bg-white/70 flex items-center justify-center w-12 h-12 rounded-full z-50 shadow-xl hover:bg-brand-secondary-xs"
       :class="{'bottom-10 right-10': scrollBtn, '-bottom-full -right-full': !scrollBtn}"
       x-data="{ isVisible: false }"
       x-init="window.addEventListener('scroll', () => { isVisible = window.scrollY > 100; })"

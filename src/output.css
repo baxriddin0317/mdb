@@ -1049,6 +1049,16 @@ body {
   transform: rotate(-45deg);
 }
 
+.hover\:bg-brand-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 99 214 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-brand-secondary-xs:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(182 203 225 / var(--tw-bg-opacity));
+}
+
 .hover\:text-brand-primary-lg:hover {
   --tw-text-opacity: 1;
   color: rgb(21 25 131 / var(--tw-text-opacity));
