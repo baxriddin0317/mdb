@@ -896,7 +896,7 @@ body {
 }
 
 .font-freight {
-  font-family: Fira Sans;
+  font-family: Freight;
 }
 
 .text-3xl {
@@ -1047,11 +1047,6 @@ body {
 .burger_active i::before {
   bottom: 0;
   transform: rotate(-45deg);
-}
-
-.hover\:bg-brand-secondary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 99 214 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-brand-secondary-xs:hover {

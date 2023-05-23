@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        'freight': ['Fira Sans'],
+        'freight': ['Freight'],
         'fira': ['Fira Sans']
       }
     },
