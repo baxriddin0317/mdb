@@ -46,8 +46,8 @@
             <a class="text-xs hover:text-brand-secondary" href="#">NEWS & INSIGHTS</a>
           </li>
           <li>
-            <button class="text-xs hover:text-brand-secondary" type="button">
-              CONNECT WITH US ON LINKEDIN
+            <button class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center" type="button">
+              <img  src="./Assets/LinkedIn_icon.png" alt="">
             </button>
           </li>
         </ul>
@@ -57,8 +57,10 @@
           <i class="absolute top-1/2 left-0 w-full h-px  bg-black transition-all ease-linear duration-200"></i>
         </button>
 
-        <!-- mobile menu -->
-        <ul class="lg:hidden">
+      </div>
+      <!-- mobile menu -->
+      <nav class="lg:hidden absolute w-full -z-50 bg-white transition-all duration-300 ease-in-out pb-10" :class="{'top-full': navbarOpen, '-top-full -translate-y-full': !navbarOpen}">
+        <ul class="flex flex-col max-w-6xl px-3.5 sm:px-12 lg:px-16 uppercase" >
           <li>
             <a class="text-xs hover:text-brand-secondary" href="#">Leadership</a>
           </li>
@@ -69,12 +71,12 @@
             <a class="text-xs hover:text-brand-secondary" href="#">NEWS & INSIGHTS</a>
           </li>
           <li>
-            <button class="text-xs hover:text-brand-secondary" type="button">
-              CONNECT WITH US ON LINKEDIN
+            <button class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center mt-2" type="button">
+              <img src="./Assets/LinkedIn_icon.png" alt="">
             </button>
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
     <!-- Header end -->
 
