@@ -3,7 +3,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font-awesome icons -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css" />
     <link href="/dist/output.css" rel="stylesheet" />
     <title>MillBank</title>
 
@@ -12,22 +14,33 @@
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body x-data="{navbarOpen: false, scrolledFromTop: false, scrollBtn: false}"
-        @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false, window.pageYOffset > 200 ? scrollBtn = true : scrollBtn = false">
-
+  <body
+    x-data="{navbarOpen: false, scrolledFromTop: false, scrollBtn: false}"
+    @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false, window.pageYOffset > 200 ? scrollBtn = true : scrollBtn = false">
     <!-- button -->
-    <button class="fixed bg-white flex items-center justify-center w-12 h-12 rounded-full z-50 shadow-xl" :class="{'bottom-10 right-10': scrollBtn, '-bottom-full -right-full': !scrollBtn}"
-    x-data="{ isVisible: false }"
-    x-init="window.addEventListener('scroll', () => { isVisible = window.scrollY > 100; })"
-    x-show="isVisible"
-    x-on:click="window.scrollTo({ top: 0, behavior: 'smooth' })">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-        <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
-      </svg>      
+    <button
+      class="fixed bg-white/70 flex items-center justify-center w-12 h-12 rounded-full z-50 shadow-xl"
+      :class="{'bottom-10 right-10': scrollBtn, '-bottom-full -right-full': !scrollBtn}"
+      x-data="{ isVisible: false }"
+      x-init="window.addEventListener('scroll', () => { isVisible = window.scrollY > 100; })"
+      x-show="isVisible"
+      x-on:click="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="w-5 h-5">
+        <path
+          fill-rule="evenodd"
+          d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
+          clip-rule="evenodd" />
+      </svg>
     </button>
 
     <!-- Header start -->
-    <header class="fixed w-full z-50 bg-white transition-all duration-300 ease-in-out" :class="{'py-4': scrolledFromTop, 'py-6': !scrolledFromTop}">
+    <header
+      class="fixed w-full z-50 bg-white transition-all duration-300 ease-in-out"
+      :class="{'py-4': scrolledFromTop, 'py-6': !scrolledFromTop}">
       <div
         class="flex items-center justify-between max-w-6xl px-3.5 sm:px-12 lg:px-16 mx-auto">
         <!-- Logo -->
@@ -37,42 +50,64 @@
         <!-- Naviation -->
         <ul class="hidden lg:flex items-center gap-x-4 uppercase">
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#">Leadership</a>
+            <a class="text-xs hover:text-brand-secondary" href="#"
+              >Leadership</a
+            >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#">LOW VOLATILITY FUND</a>
+            <a class="text-xs hover:text-brand-secondary" href="#"
+              >LOW VOLATILITY FUND</a
+            >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#">NEWS & INSIGHTS</a>
+            <a class="text-xs hover:text-brand-secondary" href="#"
+              >NEWS & INSIGHTS</a
+            >
           </li>
           <li>
-            <button class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center" type="button">
-              <img  src="./Assets/LinkedIn_icon.png" alt="">
+            <button
+              class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center"
+              type="button">
+              <img src="./Assets/LinkedIn_icon.png" alt="" />
             </button>
           </li>
         </ul>
 
         <!-- humburger button -->
-        <button class="burger lg:hidden relative w-10 h-6 mx-4" :class="{'burger_active': navbarOpen}" type="button" @click="navbarOpen = !navbarOpen">
-          <i class="absolute top-1/2 left-0 w-full h-px  bg-black transition-all ease-linear duration-200"></i>
+        <button
+          class="burger lg:hidden relative w-10 h-6 mx-4"
+          :class="{'burger_active': navbarOpen}"
+          type="button"
+          @click="navbarOpen = !navbarOpen">
+          <i
+            class="absolute top-1/2 left-0 w-full h-px bg-black transition-all ease-linear duration-200"></i>
         </button>
-
       </div>
       <!-- mobile menu -->
-      <nav class="lg:hidden absolute w-full -z-50 bg-white transition-all duration-300 ease-in-out pb-10" :class="{'top-full': navbarOpen, '-top-full -translate-y-full': !navbarOpen}">
-        <ul class="flex flex-col max-w-6xl px-3.5 sm:px-12 lg:px-16 uppercase" >
+      <nav
+        class="lg:hidden absolute w-full -z-50 bg-white transition-all duration-300 ease-in-out pb-10"
+        :class="{'top-full': navbarOpen, '-top-full -translate-y-full': !navbarOpen}">
+        <ul class="flex flex-col max-w-6xl px-3.5 sm:px-12 lg:px-16 uppercase">
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#">Leadership</a>
+            <a class="text-xs hover:text-brand-secondary" href="#"
+              >Leadership</a
+            >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#">LOW VOLATILITY FUND</a>
+            <a class="text-xs hover:text-brand-secondary" href="#"
+              >LOW VOLATILITY FUND</a
+            >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#">NEWS & INSIGHTS</a>
+            <a class="text-xs hover:text-brand-secondary" href="#"
+              >NEWS & INSIGHTS</a
+            >
           </li>
           <li>
-            <button class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center mt-2" type="button">
-              <img src="./Assets/LinkedIn_icon.png" alt="">
+            <button
+              class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center mt-2"
+              type="button">
+              <img src="./Assets/LinkedIn_icon.png" alt="" />
             </button>
           </li>
         </ul>
@@ -84,7 +119,10 @@
     <main>
       <!-- hero section start -->
       <section class="relative flex items-center justify-center h-screen">
-        <img class="absolute left-0 top-0 w-full h-full object-cover -z-10" src="./Assets/asheville.jpg" alt="">
+        <img
+          class="absolute left-0 top-0 w-full h-full object-cover -z-10"
+          src="./Assets/asheville.jpg"
+          alt="" />
 
         <div class="text-center text-white">
           <h1 class="font-freight font-black text-5xl uppercase mb-7">
@@ -102,63 +140,108 @@
         <h1 class="font-freight text-3xl text-center capitalize mb-20">
           Leadership
         </h1>
-        <div class="flex flex-col md:flex-row items-center justify-center mb-5 border-b border-gray-300">
-          <img class="md:w-80" src="./Assets/dennis.jpg" alt="dennis">
+        <div
+          class="flex flex-col md:flex-row items-center justify-center mb-5 border-b border-gray-300">
+          <img class="md:w-80" src="./Assets/dennis.jpg" alt="dennis" />
           <div class="py-14 lg:px-12 px-7 max-w-lg text-brand-gray">
-            <h2 class="font-freight font-black text-xl text-black mb-1 capitalize">
+            <h2
+              class="font-freight font-black text-xl text-black mb-1 capitalize">
               Dennis Davitt
             </h2>
-            <p class="font-freight text-sm text-black mb-5 uppercase">cio/ceo</p>
-            <p class="mb-5">
-              Prior to founding MDP Dennis was a Partner/Portfolio Manager at Harvest Volatility Management where he developed multiple option strategies. Total AUM in these strategies was over $950M in assets.
+            <p class="font-freight text-sm text-black mb-5 uppercase">
+              cio/ceo
             </p>
             <p class="mb-5">
-              Dennis was the Head of Americas Equity Derivatives for Credit Suisse and Macquarie Bank where he had responsibility for all aspects of trading and risk management from proprietary trading, automated market making, exotics, corporate, LATAM, and flow trading (both index and single stock), a group encompassing over ten billion dollars of the bank’s capital. While at Credit Suisse, Dennis helped develop the firm’s structure on integrating all the above products under one common risk mandate.
+              Prior to founding MDP Dennis was a Partner/Portfolio Manager at
+              Harvest Volatility Management where he developed multiple option
+              strategies. Total AUM in these strategies was over $950M in
+              assets.
             </p>
             <p class="mb-5">
-              The Credit Suisse Fear Barometer (CSFB) created by Dennis in 2008 is a way to measure put demand in the marketplace and thus a strong indicator of the desire for downside protection which can be interpreted as fear of a market correction. This tool is still an integral part of many derivative research pieces written today.
+              Dennis was the Head of Americas Equity Derivatives for Credit
+              Suisse and Macquarie Bank where he had responsibility for all
+              aspects of trading and risk management from proprietary trading,
+              automated market making, exotics, corporate, LATAM, and flow
+              trading (both index and single stock), a group encompassing over
+              ten billion dollars of the bank’s capital. While at Credit Suisse,
+              Dennis helped develop the firm’s structure on integrating all the
+              above products under one common risk mandate.
             </p>
             <p class="mb-5">
-              As an original member of Wolverine Trading in the SPX pit on Chicago, he learned the value of liquidity, and how to adapt to changing markets and innovate inside the old ones. Dennis has been a guest writer for the popular volatility column “Strike Price” in Barron's and has often been invited to provide market color and option commentary on television.
+              The Credit Suisse Fear Barometer (CSFB) created by Dennis in 2008
+              is a way to measure put demand in the marketplace and thus a
+              strong indicator of the desire for downside protection which can
+              be interpreted as fear of a market correction. This tool is still
+              an integral part of many derivative research pieces written today.
+            </p>
+            <p class="mb-5">
+              As an original member of Wolverine Trading in the SPX pit on
+              Chicago, he learned the value of liquidity, and how to adapt to
+              changing markets and innovate inside the old ones. Dennis has been
+              a guest writer for the popular volatility column “Strike Price” in
+              Barron's and has often been invited to provide market color and
+              option commentary on television.
             </p>
 
             <div class="flex items-center space-x-4">
               <a class="w-7 h-7" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#151983" class="w-7 h-7">
-                  <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                  <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="#151983"
+                  class="w-7 h-7">
+                  <path
+                    d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                  <path
+                    d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
                 </svg>
               </a>
               <a href="@">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#151983" class="w-6 h-6">
-                  <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-                </svg>                
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#151983"
+                  class="w-6 h-6">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                    clip-rule="evenodd" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
         <div class="flex flex-col md:flex-row items-center justify-center mt-5">
-          <img class="md:w-80" src="./Assets/mike.jpg" alt="mike">
+          <img class="md:w-80" src="./Assets/mike.jpg" alt="mike" />
           <div class="py-14 lg:px-12 px-7 max-w-lg text-brand-gray">
-            <h2 class="font-freight font-black text-xl text-black mb-1 capitalize">
+            <h2
+              class="font-freight font-black text-xl text-black mb-1 capitalize">
               Mike McCarty
             </h2>
             <p class="font-freight text-sm text-black mb-5 uppercase">coo</p>
             <p class="mb-5">
-              Prior to founding MDP, Mike was the Co-founder of Stream Asset Management, a Red Bank, NJ long/short equity Hedge Fund.
+              Prior to founding MDP, Mike was the Co-founder of Stream Asset
+              Management, a Red Bank, NJ long/short equity Hedge Fund.
             </p>
             <p class="mb-5">
-              Mike has been a source for Bloomberg, The WSJ and CNBC on air and in print on topics regarding ETFs, Financing and market trends.
+              Mike has been a source for Bloomberg, The WSJ and CNBC on air and
+              in print on topics regarding ETFs, Financing and market trends.
             </p>
             <p class="mb-5">
-              Mike spent a combined 11 years at Morgan Stanley and Credit Suisse. He eventually led the US Program Trading desk at Morgan Stanley while at Credit Suisse he created the Delta-1 business which combined elements of program trading, swaps and ETFs.
+              Mike spent a combined 11 years at Morgan Stanley and Credit
+              Suisse. He eventually led the US Program Trading desk at Morgan
+              Stanley while at Credit Suisse he created the Delta-1 business
+              which combined elements of program trading, swaps and ETFs.
             </p>
             <p class="mb-5">
-              Prior to working in the US, Mike first started his career on Wall Street in the proprietary trading group at Kidder, Peabody trading index arbitrage in Tokyo and Osaka, Japan.
+              Prior to working in the US, Mike first started his career on Wall
+              Street in the proprietary trading group at Kidder, Peabody trading
+              index arbitrage in Tokyo and Osaka, Japan.
             </p>
 
             <p class="mb-5">
-              Mike has been involved in Derivatives, Program Trading and Financing for over 30 years.
+              Mike has been involved in Derivatives, Program Trading and
+              Financing for over 30 years.
             </p>
 
             <p class="mb-5">
@@ -167,15 +250,28 @@
 
             <div class="flex items-center space-x-4">
               <a class="w-7 h-7" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#151983" class="w-7 h-7">
-                  <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                  <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="#151983"
+                  class="w-7 h-7">
+                  <path
+                    d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                  <path
+                    d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
                 </svg>
               </a>
               <a href="@">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#151983" class="w-6 h-6">
-                  <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-                </svg>                
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#151983"
+                  class="w-6 h-6">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                    clip-rule="evenodd" />
+                </svg>
               </a>
             </div>
           </div>
@@ -194,7 +290,17 @@
               richard tavoso
             </h2>
             <p class="text-sm md:text-base text-brand-gray mb-5">
-              Richard Tavoso was a Managing Director at RBC Capital Markets, Head of the Global Arbitrage & Trading Division and a member of the Capital Markets Operating Committee. Over his 20 years at RBC, he was responsible for running the firm’s proprietary trading division and oversaw the Central Funding Group which offered secured balance sheet funding solutions to clients. Richard has previously served as the President of Galaxy Digital from its inception until December 2018. Earlier in his career, Richard spent 7 years at Kidder Peabody, where he built and managed the Tokyo equity derivatives group. He holds a degree in History from Princeton University.
+              Richard Tavoso was a Managing Director at RBC Capital Markets,
+              Head of the Global Arbitrage & Trading Division and a member of
+              the Capital Markets Operating Committee. Over his 20 years at RBC,
+              he was responsible for running the firm’s proprietary trading
+              division and oversaw the Central Funding Group which offered
+              secured balance sheet funding solutions to clients. Richard has
+              previously served as the President of Galaxy Digital from its
+              inception until December 2018. Earlier in his career, Richard
+              spent 7 years at Kidder Peabody, where he built and managed the
+              Tokyo equity derivatives group. He holds a degree in History from
+              Princeton University.
             </p>
           </div>
         </div>
@@ -204,7 +310,19 @@
             Michael Novogratz
           </h2>
           <p class="text-sm md:text-base text-brand-gray mb-5">
-            Michael Novogratz is the Founder, CEO and Chairman of Galaxy Digital. He was formerly a Partner and President of Fortress Investment Group LLC. Prior to Fortress, Mr. Novogratz spent 11 years at Goldman Sachs, where he was elected Partner in 1998. Mr. Novogratz served on the New York Federal Reserve’s Investment Advisory Committee on Financial Markets from 2012 – 2015. Mr. Novogratz serves as the Chairman of The Bail Project and has made criminal justice reform a focus of his family’s foundation. He also serves as the Chairman of Hudson River Park Friends, and sits on the boards of NYU Langone Medical Center, the Princeton Varsity Club, Jazz Foundation of America, and Artists for Peace and Justice. Mr. Novogratz received an AB in Economics from Princeton University, and served as a helicopter pilot in the US Army.
+            Michael Novogratz is the Founder, CEO and Chairman of Galaxy
+            Digital. He was formerly a Partner and President of Fortress
+            Investment Group LLC. Prior to Fortress, Mr. Novogratz spent 11
+            years at Goldman Sachs, where he was elected Partner in 1998. Mr.
+            Novogratz served on the New York Federal Reserve’s Investment
+            Advisory Committee on Financial Markets from 2012 – 2015. Mr.
+            Novogratz serves as the Chairman of The Bail Project and has made
+            criminal justice reform a focus of his family’s foundation. He also
+            serves as the Chairman of Hudson River Park Friends, and sits on the
+            boards of NYU Langone Medical Center, the Princeton Varsity Club,
+            Jazz Foundation of America, and Artists for Peace and Justice. Mr.
+            Novogratz received an AB in Economics from Princeton University, and
+            served as a helicopter pilot in the US Army.
           </p>
         </div>
       </section>
@@ -218,225 +336,468 @@
         <div class="grid sm:grid-cols-2 md:grid-cols-3 items-stretch gap-x-6">
           <div class="shadow-lg w-full sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/cnbc.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/cnbc.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7 z-40">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
           <div class="shadow-lg sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/alphaexchange.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/alphaexchange.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7 z-20">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
-          <div class=" shadow-lg sm:px-3.5 mb-7 overflow-hidden">
+          <div class="shadow-lg sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/citywire.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/citywire.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
           <div class="shadow-lg w-full sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/bloomberg.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/bloomberg.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7 z-40">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
           <div class="shadow-lg sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/flirt.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/flirt.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7 z-20">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
-          <div class=" shadow-lg sm:px-3.5 mb-7 overflow-hidden">
+          <div class="shadow-lg sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/citywire.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/citywire.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
           <div class="shadow-lg w-full sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/cnbc.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/cnbc.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7 z-40">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
           <div class="shadow-lg sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/fintech.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/fintech.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7 z-20">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
           </div>
-          <div class=" shadow-lg sm:px-3.5 mb-7 overflow-hidden">
+          <div class="shadow-lg sm:px-3.5 mb-7 overflow-hidden">
             <div class="w-full h-52 mx-auto">
-              <img class="h-40 object-cover w-full" src="./Assets/citywire.jpg" alt="cnbs">
+              <img
+                class="h-40 object-cover w-full"
+                src="./Assets/citywire.jpg"
+                alt="cnbs" />
               <div class="w-full -mt-20 z-10">
-                <svg class="g-pos-abs g-left-0 g-right-0" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px" viewBox="20 -20 300 100" style="top: -70%;">
-                  <path d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" opacity="0.4" fill="#f0f1f3"></path>
-                  <path d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-              H42.401L43.415,98.342z" opacity="0" fill="#fff"></path>
-                  <path d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#fff"></path>
+                <svg
+                  class="g-pos-abs g-left-0 g-right-0"
+                  version="1.1"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100%"
+                  height="140px"
+                  viewBox="20 -20 300 100"
+                  style="top: -70%">
+                  <path
+                    d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+              c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+              c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                    opacity="0.4"
+                    fill="#f0f1f3"></path>
+                  <path
+                    d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+              H42.401L43.415,98.342z"
+                    opacity="0"
+                    fill="#fff"></path>
+                  <path
+                    d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+              c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                    fill="#fff"></path>
                 </svg>
               </div>
             </div>
             <div class="p-7">
-              <a class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5" href="#">
+              <a
+                class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
+                href="#">
                 Dennis Davitt joins CNBC’s "Fast Money"
               </a>
-              <a class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize" href="#">
+              <a
+                class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
+                href="#">
                 read more
               </a>
             </div>
@@ -449,21 +810,19 @@
 
     <!-- footer start -->
     <footer class="max-w-6xl mx-auto px-3.5 sm:px-14 lg:px-16 py-9">
-      <div class="flex items-center justify-between ">
-        <p class="flex items-center gap-1 md:gap-x-5 text-xs text-brand-gray ">
+      <div class="flex items-center justify-between">
+        <p class="flex items-center gap-1 md:gap-x-5 text-xs text-brand-gray">
           <a class="inline-block" href="3">
-            <img class="w-20" src="./Assets/logo-md.jpg" alt="">
+            <img class="w-20" src="./Assets/logo-md.jpg" alt="" />
           </a>
           22 South Pack Square Suite 401, Asheville, NC 28801
-          <a class="inline-block" href="#">
-
-          </a>
+          <a class="inline-block" href="#"> </a>
         </p>
         <p class="text-xs text-brand-gray text-right">
           © 2020 Millbank Dartmoor Portsmouth. All Rights Reserved.
         </p>
       </div>
-    </footer> 
+    </footer>
     <!-- footer end -->
   </body>
 </html>
