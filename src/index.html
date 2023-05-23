@@ -16,7 +16,11 @@
         @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false, window.pageYOffset > 200 ? scrollBtn = true : scrollBtn = false">
 
     <!-- button -->
-    <button class="fixed bg-white flex items-center justify-center w-12 h-12 rounded-full z-50 shadow-xl" :class="{'bottom-10 right-10': scrollBtn, '-bottom-full -right-full': !scrollBtn}">
+    <button class="fixed bg-white flex items-center justify-center w-12 h-12 rounded-full z-50 shadow-xl" :class="{'bottom-10 right-10': scrollBtn, '-bottom-full -right-full': !scrollBtn}"
+    x-data="{ isVisible: false }"
+    x-init="window.addEventListener('scroll', () => { isVisible = window.scrollY > 100; })"
+    x-show="isVisible"
+    x-on:click="window.scrollTo({ top: 0, behavior: 'smooth' })">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
         <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
       </svg>      
@@ -52,6 +56,24 @@
         <button class="burger lg:hidden relative w-10 h-6 mx-4" :class="{'burger_active': navbarOpen}" type="button" @click="navbarOpen = !navbarOpen">
           <i class="absolute top-1/2 left-0 w-full h-px  bg-black transition-all ease-linear duration-200"></i>
         </button>
+
+        <!-- mobile menu -->
+        <ul class="lg:hidden">
+          <li>
+            <a class="text-xs hover:text-brand-secondary" href="#">Leadership</a>
+          </li>
+          <li>
+            <a class="text-xs hover:text-brand-secondary" href="#">LOW VOLATILITY FUND</a>
+          </li>
+          <li>
+            <a class="text-xs hover:text-brand-secondary" href="#">NEWS & INSIGHTS</a>
+          </li>
+          <li>
+            <button class="text-xs hover:text-brand-secondary" type="button">
+              CONNECT WITH US ON LINKEDIN
+            </button>
+          </li>
+        </ul>
       </div>
     </header>
     <!-- Header end -->
