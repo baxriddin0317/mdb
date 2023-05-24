@@ -46,23 +46,23 @@
         <!-- Naviation -->
         <ul class="hidden lg:flex items-center gap-x-4 uppercase">
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#team-section"
+            <a class="text-sm hover:text-brand-secondary" href="#team-section"
               >Leadership</a
             >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="https://www.mdplx.com/" target="_blank"
+            <a class="text-sm hover:text-brand-secondary" href="https://www.mdplx.com/" target="_blank"
               >LOW VOLATILITY FUND</a
             >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#news-section"
+            <a class="text-sm hover:text-brand-secondary" href="#news-section"
               >NEWS & INSIGHTS</a
             >
           </li>
           <li>
             <button
-              class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center"
+              class="w-6 h-6 flex items-center"
               type="button">
               <img src="./Assets/LinkedIn_icon.png" alt="" />
             </button>
@@ -85,24 +85,25 @@
         :class="{'top-full': navbarOpen, '-top-full -translate-y-full': !navbarOpen}">
         <ul class="flex flex-col max-w-6xl px-3.5 sm:px-12 lg:px-16 uppercase">
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#team-section"
+            <a @click="navbarOpen = false" class="text-xs hover:text-brand-secondary" href="#team-section"
               >Leadership</a
             >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="https://www.mdplx.com/"
+            <a @click="navbarOpen = false" class="text-xs hover:text-brand-secondary" href="https://www.mdplx.com/" target="_blank"
               >LOW VOLATILITY FUND</a
             >
           </li>
           <li>
-            <a class="text-xs hover:text-brand-secondary" href="#news-section" target="_blank"
+            <a @click="navbarOpen = false" class="text-xs hover:text-brand-secondary mb-2" href="#news-section" 
               >NEWS & INSIGHTS</a
             >
           </li>
           <li>
             <button
-              class="text-xs hover:text-brand-secondary w-6 h-6 flex items-center mt-2"
-              type="button">
+              class="w-6 h-6 flex items-center mt-2"
+              type="button"
+              @click="navbarOpen = false">
               <img src="./Assets/LinkedIn_icon.png" alt="" />
             </button>
           </li>
@@ -121,10 +122,10 @@
           alt="" />
 
         <div class="text-center text-white">
-          <h1 class="font-freight font-black text-5xl uppercase mb-7">
+          <h1 class="font-freight font-black text-4xl sm:text-6xl uppercase mb-7">
             MILLBANK DARTMOOR PORTSMOUTH
           </h1>
-          <p class="text-3xl mb-7">
+          <p class="text-2xl sm:text-4xl mb-7">
             The premier provider of efficient, liquid derivative strategies.
           </p>
         </div>
@@ -144,7 +145,7 @@
               class="font-freight font-black text-xl text-black mb-1 capitalize">
               Dennis Davitt
             </h2>
-            <p class="font-freight text-sm text-black mb-5 uppercase">
+            <p class="font-bold text-sm text-black mb-5 uppercase">
               cio/ceo
             </p>
             <p class="mb-5">
@@ -214,7 +215,7 @@
               class="font-freight font-black text-xl text-black mb-1 capitalize">
               Mike McCarty
             </h2>
-            <p class="font-freight text-sm text-black mb-5 uppercase">coo</p>
+            <p class="font-bold text-sm text-black mb-5 uppercase">coo</p>
             <p class="mb-5">
               Prior to founding MDP, Mike was the Co-founder of Stream Asset
               Management, a Red Bank, NJ long/short equity Hedge Fund.
@@ -282,7 +283,7 @@
         </h1>
         <div class="max-w-6xl mx-auto px-3.5 md:px-5 border-b border-gray-300">
           <div class="py-14 lg:px-12 px-7 max-w-lg mx-auto">
-            <h2 class="font-freight font-black text-xl capitalize mb-1">
+            <h2 class="font-freight font-black text-2xl capitalize mb-2">
               richard tavoso
             </h2>
             <p class="text-sm md:text-base text-brand-gray mb-5">
@@ -302,7 +303,7 @@
         </div>
 
         <div class="py-14 lg:px-12 px-7 max-w-lg mx-auto">
-          <h2 class="font-freight font-black text-xl capitalize mb-1">
+          <h2 class="font-freight font-black text-2xl capitalize mb-2">
             Michael Novogratz
           </h2>
           <p class="text-sm md:text-base text-brand-gray mb-5">
@@ -386,7 +387,7 @@
             <div class="w-full h-52 mx-auto">
               <img
                 class="h-40 object-cover w-full"
-                src="./Assets/alphaexchange.jpg"
+                src="./Assets/citywire.jpg"
                 alt="cnbs" />
               <div class="w-full -mt-20 z-10">
                 <svg
@@ -438,7 +439,7 @@
             <div class="w-full h-52 mx-auto">
               <img
                 class="h-40 object-cover w-full"
-                src="./Assets/citywire.jpg"
+                src="./Assets/alphaexchange.jpg"
                 alt="cnbs" />
               <div class="w-full -mt-20 z-10">
                 <svg
@@ -476,8 +477,8 @@
             <div class="p-7">
               <a
                 class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
-                Dennis Davitt joins CNBC’s "Fast Money"
+                href="https://alphaexchange.simplecast.com/episodes/dennis-davitt-cio-millbank-dartmoor-portsmouth" target="_blank">
+                Dennis Davitt on the Alpha Exchange Podcast
               </a>
               <a
                 class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
@@ -528,12 +529,12 @@
             <div class="p-7 z-40">
               <a
                 class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
-                Dennis Davitt joins CNBC’s "Fast Money"
+                href="https://www.bloomberg.com/news/articles/2020-12-17/novogratz-backs-volatility-fund-betting-covid-hit-trade-rebounds" target="_blank">
+                Novogratz Backs Volatility Fund Betting Covid-Hit Trade Rebounds
               </a>
               <a
                 class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
+                href="https://www.bloomberg.com/news/articles/2020-12-17/novogratz-backs-volatility-fund-betting-covid-hit-trade-rebounds" target="_blank">
                 read more
               </a>
             </div>
@@ -580,12 +581,12 @@
             <div class="p-7 z-20">
               <a
                 class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
-                Dennis Davitt joins CNBC’s "Fast Money"
+                href="https://flirtingwithmodels.libsyn.com/dennis-davitt-markets-models-s4e6" target="_blank">
+                Flirting with Models Speaks with Dennis Davitt
               </a>
               <a
                 class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
+                href="https://flirtingwithmodels.libsyn.com/dennis-davitt-markets-models-s4e6" target="_blank">
                 read more
               </a>
             </div>
@@ -632,12 +633,12 @@
             <div class="p-7">
               <a
                 class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
-                Dennis Davitt joins CNBC’s "Fast Money"
+                href="https://citywire.com/ria/news/the-pitch-options-veteran-offers-a-new-way-to-hedge-your-equities/a1500682" target="_blank">
+                Options veteran offers a new way to hedge your equities
               </a>
               <a
                 class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
+                href="https://citywire.com/ria/news/the-pitch-options-veteran-offers-a-new-way-to-hedge-your-equities/a1500682" target="_blank">
                 read more
               </a>
             </div>
@@ -684,12 +685,12 @@
             <div class="p-7 z-40">
               <a
                 class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
-                Dennis Davitt joins CNBC’s "Fast Money"
+                href="https://www.cnbc.com/video/2017/12/27/teslas-back-in-a-bear-market-do-you-dare-buy.html" target="_blank">
+                Dennis Davitt joins CNBC’s "Trading Nation"
               </a>
               <a
                 class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
+                href="https://www.cnbc.com/video/2017/12/27/teslas-back-in-a-bear-market-do-you-dare-buy.html" target="_blank">
                 read more
               </a>
             </div>
@@ -736,12 +737,12 @@
             <div class="p-7 z-20">
               <a
                 class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
-                Dennis Davitt joins CNBC’s "Fast Money"
+                href="https://podcasts.apple.com/us/podcast/episode-140-the-undeniable-relationship-between/id1564085722?i=1000579901035" target="_blank">
+                The Undeniable Relationship between Politics and Business
               </a>
               <a
                 class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
+                href="https://podcasts.apple.com/us/podcast/episode-140-the-undeniable-relationship-between/id1564085722?i=1000579901035" target="_blank">
                 read more
               </a>
             </div>
@@ -750,7 +751,7 @@
             <div class="w-full h-52 mx-auto">
               <img
                 class="h-40 object-cover w-full"
-                src="./Assets/citywire.jpg"
+                src="./Assets/cnbc.jpg"
                 alt="cnbs" />
               <div class="w-full -mt-20 z-10">
                 <svg
@@ -788,12 +789,12 @@
             <div class="p-7">
               <a
                 class="block text-lg font-freight font-black hover:text-brand-primary-lg mb-3.5"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
-                Dennis Davitt joins CNBC’s "Fast Money"
+                href="https://www.youtube.com/watch?v=2rM_NBE6ThQ&ab_channel=CNBC" target="_blank">
+                Short Volatility Is Not The Story Behind Sell-Off
               </a>
               <a
                 class="block text-lg text-brand-gray hover:text-brand-primary-lg capitalize"
-                href="https://citywire.com/ria/news/don-t-fall-for-the-alpha-myth-fund-manager/a2395770" target="_blank">
+                href="https://www.youtube.com/watch?v=2rM_NBE6ThQ&ab_channel=CNBC" target="_blank">
                 read more
               </a>
             </div>
@@ -807,12 +808,14 @@
     <!-- footer start -->
     <footer class="max-w-6xl mx-auto px-3.5 sm:px-14 lg:px-16 py-9">
       <div class="flex items-center justify-between">
-        <p class="flex items-center gap-1 md:gap-x-5 text-xs text-brand-gray">
+        <p class="flex items-center flex-wrap gap-1 md:gap-x-5 text-xs text-brand-gray">
           <a class="inline-block" href="3">
             <img class="w-20" src="./Assets/logo-md.jpg" alt="" />
           </a>
           22 South Pack Square Suite 401, Asheville, NC 28801
-          <a class="inline-block" href="#"> </a>
+          <a class="inline-block w-2.5" href="https://www.linkedin.com/company/millbank-dartmouth-portsmouth" target="_blank"> 
+            <img class="" src="./Assets/LinkedIn_icon.png" alt="">
+          </a>
         </p>
         <p class="text-xs text-brand-gray text-right">
           © 2020 Millbank Dartmoor Portsmouth. All Rights Reserved.
